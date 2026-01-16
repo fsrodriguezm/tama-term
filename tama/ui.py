@@ -381,6 +381,7 @@ class UI:
             "",
             "Tip: adjust evolution speed with --speed (example: python -m tama --speed 10).",
             "Tip: enable AI chatter with --ai (uses local Ollama).",
+            "Note: Time automatically pauses when you close the game.",
             "Press ? to close this window.",
         ]
         yy = y + 1

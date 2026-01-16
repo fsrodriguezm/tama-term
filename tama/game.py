@@ -51,12 +51,22 @@ def run(stdscr: "curses._CursesWindow", save_path: str, reset: bool, speed: floa
 
     last_render = now()
     last_save = now()
+    welcomed_back = False  # Track if we've shown welcome message
 
     try:
         while True:
             t = now()
             dt = t - pet.last_tick
             pet.last_tick = t
+
+            # Cap dt to prevent time jumps when game was closed
+            # Max 5 seconds of real time can pass (= 30s game time at 6x speed)
+            if dt > 5.0:
+                if dt > 300.0 and not welcomed_back:  # 5+ minutes away
+                    ui.log("Welcome back! Time was paused while you were away.")
+                    welcomed_back = True
+                dt = 5.0
+
             pet.age_accum_s += float(dt)
             if pet.age_accum_s >= 1.0:
                 inc = int(pet.age_accum_s)

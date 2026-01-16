@@ -2,6 +2,8 @@
 
 A terminal-based Tamagotchi inspired virtual pet with classic evolution mechanics, stat management, and optional AI personality powered by local Ollama models.
 
+![Terminal Tamagotchi Game Screenshot](image.png)
+
 ## Features
 
 - **Classic Tamagotchi gameplay**: Feed, play, clean, and care for your pet
@@ -42,18 +44,18 @@ python tama.py --ai
 
 ## Controls
 
-| Key | Action |
-|-----|--------|
-| `f` | Feed your pet |
-| `p` | Play with your pet |
-| `s` | Toggle sleep/wake |
-| `c` | Clean up waste |
+| Key | Action                      |
+| --- | --------------------------- |
+| `f` | Feed your pet               |
+| `p` | Play with your pet          |
+| `s` | Toggle sleep/wake           |
+| `c` | Clean up waste              |
 | `m` | Give medicine (costs coins) |
-| `g` | Play minigame (earn coins) |
-| `t` | Train/discipline |
-| `r` | Rename your pet |
-| `?` | Show help |
-| `q` | Quit (auto-saves) |
+| `g` | Play minigame (earn coins)  |
+| `t` | Train/discipline            |
+| `r` | Rename your pet             |
+| `?` | Show help                   |
+| `q` | Quit (auto-saves)           |
 
 ## Evolution System
 
@@ -66,6 +68,7 @@ egg → baby → child → teen → adult
 **Care Mistakes**: Neglecting your pet's needs (letting hunger/happiness drop too low, ignoring sickness, not cleaning waste) accumulates "care mistakes" that influence which adult form your pet evolves into.
 
 **Time Stats**:
+
 - `age`: Real time since hatching
 - `life`: Simulated time used for evolution and stat changes (affected by `--speed`)
 
@@ -94,6 +97,7 @@ python tama.py --ai --ai-model llama2:7b
 ```
 
 The setup wizard will:
+
 1. Check if Ollama is installed and running
 2. List available models
 3. Let you choose a personality (cheerful, grumpy, wise, chaotic, zen)
@@ -122,15 +126,18 @@ python tama.py --save ~/my-pet-saves/pet1.json
 ## Troubleshooting
 
 **AI mode not working?**
+
 - Ensure Ollama is installed: `ollama --version`
 - Start Ollama service: `ollama serve`
 - Pull a model: `ollama pull qwen2.5:0.5b`
 
 **Terminal display issues?**
+
 - Ensure your terminal window is large enough (min 80x24)
 - Try resizing the window if layout looks broken
 
 **Save file not persisting?**
+
 - Check permissions on home directory
 - Use `--save` flag to specify a writable location
 
