@@ -29,13 +29,15 @@ git clone <repository-url>
 cd tama-term
 
 # Run with default settings
-python3 tama.py
+python tama.py
+# or
+python -m tama
 
 # Or with faster simulation speed
-python3 tama.py --speed 5
+python tama.py --speed 5
 
 # With AI chat enabled
-python3 tama.py --ai
+python tama.py --ai
 ```
 
 ## Controls
@@ -71,11 +73,11 @@ egg → baby → child → teen → adult
 
 ### Speed Control
 
-Adjust simulation speed (default: 1.0):
+Adjust simulation speed (default: 6.0):
 
 ```bash
-python3 tama.py --speed 5    # 5x faster
-python3 tama.py --speed 0.5  # Half speed
+python tama.py --speed 5    # 5x faster
+python tama.py --speed 0.5  # Half speed
 ```
 
 ### AI Chat Mode
@@ -84,11 +86,11 @@ Enable AI personality with Ollama:
 
 ```bash
 # Interactive setup wizard
-python3 tama.py --ai
+python tama.py --ai
 
 # Specify model directly
-python3 tama.py --ai --ai-model qwen2.5:0.5b
-python3 tama.py --ai --ai-model llama2:7b
+python tama.py --ai --ai-model qwen2.5:0.5b
+python tama.py --ai --ai-model llama2:7b
 ```
 
 The setup wizard will:
@@ -102,10 +104,10 @@ By default, saves to `~/.tama_state.json`:
 
 ```bash
 # Use local save file instead
-python3 tama.py --save .tama_state.json
+python tama.py --save .tama_state.json
 
 # Custom path
-python3 tama.py --save ~/my-pet-saves/pet1.json
+python tama.py --save ~/my-pet-saves/pet1.json
 ```
 
 ## Gameplay Tips
