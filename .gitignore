@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.DS_Store
+
+# local save (lives in home dir by default, but ignore if copied in)
+.tama_state.json
+
